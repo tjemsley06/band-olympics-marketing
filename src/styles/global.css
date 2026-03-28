@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  /* Core palette — matches bandolympics.live */
+  --color-background: #0a0a0a;
+  --color-surface: #1a1a2e;
+  --color-card: #1a1a2e;
+  --color-card-alt: #18181b;
+  --color-border: rgba(124, 58, 237, 0.2);
+  --color-border-subtle: #27272a;
+
+  /* Text */
+  --color-foreground: #ffffff;
+  --color-muted: #a0a0b0;
+
+  /* Primary */
+  --color-primary: #7c3aed;
+  --color-primary-hover: #6d28d9;
+  --color-primary-foreground: #ffffff;
+  --color-primary-glow: rgba(124, 58, 237, 0.3);
+
+  /* Accents */
+  --color-pink: #ff00ea;
+  --color-cyan: #00e5ff;
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scroll animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Selection */
+::selection {
+  background: rgba(124, 58, 237, 0.4);
+  color: #ffffff;
+}

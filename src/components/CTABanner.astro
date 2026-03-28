@@ -1,0 +1,35 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = "Ready to build a more motivated band program?",
+  subtitle = "Join the growing community of directors using Band Olympics to track progress, celebrate achievement, and inspire students to practice.",
+} = Astro.props;
+---
+
+<section class="py-24 px-6">
+  <div
+    class="max-w-[900px] mx-auto text-center p-14 rounded-2xl border border-primary/30"
+    style="background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.12) 0%, rgba(10, 10, 10, 0.5) 70%); box-shadow: 0 0 60px rgba(124, 58, 237, 0.08);"
+  >
+    <h2 class="text-3xl md:text-4xl font-black text-foreground mb-4 tracking-tight">{title}</h2>
+    <p class="text-muted mb-10 max-w-md mx-auto">{subtitle}</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        href="/contact"
+        class="inline-flex items-center px-8 py-3.5 text-base font-bold rounded-lg bg-primary text-primary-foreground hover:bg-primary-hover transition-all duration-200 shadow-[0_0_25px_rgba(124,58,237,0.4)] hover:shadow-[0_0_35px_rgba(124,58,237,0.6)]"
+      >
+        Start Your Free Trial
+      </a>
+      <a
+        href="/contact"
+        class="inline-flex items-center px-8 py-3.5 text-base font-semibold rounded-lg border border-primary/30 text-foreground hover:bg-primary/10 hover:border-primary/50 transition-all duration-200"
+      >
+        Contact Us
+      </a>
+    </div>
+  </div>
+</section>

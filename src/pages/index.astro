@@ -1,0 +1,270 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import PricingCard from "../components/PricingCard.astro";
+import FAQAccordion from "../components/FAQAccordion.astro";
+import CTABanner from "../components/CTABanner.astro";
+
+export const prerender = false;
+---
+
+<BaseLayout>
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section
+    class="relative min-h-[85vh] flex items-center justify-center px-6 text-center overflow-hidden"
+    style="background: radial-gradient(ellipse at top center, #4c1d95 0%, #1a1a2e 40%, #0a0a0a 80%);"
+  >
+    <!-- Subtle grid overlay -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%239C92AC&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+    <div class="max-w-3xl mx-auto relative z-10 pt-16">
+      <img
+        src="/band-olympics-logo.png"
+        alt="Band Olympics"
+        class="w-28 md:w-36 h-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(124,58,237,0.6)]"
+      />
+      <h1 class="text-[clamp(28px,6vw,56px)] font-black tracking-tight mb-2 leading-[1.1]">
+        <span class="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/70">BAND</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-b from-primary via-primary to-primary/70">OLYMPICS</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-b from-pink via-pink to-pink/70">LIVE</span>
+      </h1>
+      <p class="text-primary/90 text-sm md:text-base font-bold uppercase tracking-[0.25em] mt-4 mb-3">
+        Own Your Practice. Earn Your Medal.
+      </p>
+      <p class="text-muted text-base md:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
+        The achievement platform that helps band directors motivate students, track musical growth, and celebrate real progress — all in one place.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="/contact"
+          class="inline-flex items-center px-8 py-3.5 text-base font-bold rounded-lg bg-primary text-primary-foreground hover:bg-primary-hover transition-all duration-200 shadow-[0_0_25px_rgba(124,58,237,0.4)] hover:shadow-[0_0_40px_rgba(124,58,237,0.6)]"
+        >
+          Start Free Trial
+        </a>
+        <a
+          href="#how-it-works"
+          class="inline-flex items-center px-8 py-3.5 text-base font-semibold rounded-lg border border-primary/30 text-foreground hover:bg-primary/10 hover:border-primary/50 transition-all duration-200"
+        >
+          See How It Works
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sound Familiar? -->
+  <section class="py-24 px-6">
+    <div class="max-w-[1200px] mx-auto">
+      <h2 class="text-3xl md:text-[2.5rem] font-black text-center text-foreground mb-3 tracking-tight fade-up">
+        Sound familiar?
+      </h2>
+      <p class="text-muted text-center mb-14 fade-up">Every band director has faced these challenges.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Paper scorecard -->
+        <div class="fade-up p-8 rounded-xl border border-primary/15 bg-card/40 text-center hover:border-primary/30 hover:shadow-[0_0_30px_rgba(124,58,237,0.06)] transition-all duration-300">
+          <div class="flex justify-center mb-5">
+            <div class="relative">
+              <div class="absolute inset-0 blur-xl bg-pink/20 rounded-full"></div>
+              <svg class="w-12 h-12 relative" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="4" width="28" height="40" rx="3" stroke="#ff00ea" stroke-width="2"/>
+                <circle cx="15" cy="12" r="2" fill="#ff00ea" fill-opacity="0.5"/>
+                <circle cx="15" cy="24" r="2" fill="#ff00ea" fill-opacity="0.5"/>
+                <circle cx="15" cy="36" r="2" fill="#ff00ea" fill-opacity="0.5"/>
+                <line x1="20" y1="10" x2="34" y2="10" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.6"/>
+                <line x1="20" y1="14" x2="30" y2="14" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.3"/>
+                <line x1="20" y1="22" x2="34" y2="22" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.6"/>
+                <line x1="20" y1="26" x2="28" y2="26" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.3"/>
+                <line x1="20" y1="34" x2="34" y2="34" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.6"/>
+                <line x1="20" y1="38" x2="32" y2="38" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.3"/>
+              </svg>
+            </div>
+          </div>
+          <p class="text-foreground font-semibold leading-snug">Paper scorecards get lost before the semester ends</p>
+        </div>
+        <!-- Magnifying glass -->
+        <div class="fade-up p-8 rounded-xl border border-primary/15 bg-card/40 text-center hover:border-primary/30 hover:shadow-[0_0_30px_rgba(124,58,237,0.06)] transition-all duration-300">
+          <div class="flex justify-center mb-5">
+            <div class="relative">
+              <div class="absolute inset-0 blur-xl bg-pink/20 rounded-full"></div>
+              <svg class="w-12 h-12 relative" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="12" stroke="#ff00ea" stroke-width="2"/>
+                <circle cx="20" cy="20" r="8" stroke="#ff00ea" stroke-width="1" stroke-opacity="0.3"/>
+                <line x1="29" y1="29" x2="40" y2="40" stroke="#ff00ea" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="20" cy="20" r="3" fill="#ff00ea" fill-opacity="0.15"/>
+              </svg>
+            </div>
+          </div>
+          <p class="text-foreground font-semibold leading-snug">It's hard to know which students are practicing and which ones aren't</p>
+        </div>
+        <!-- Chart with cutthrough -->
+        <div class="fade-up p-8 rounded-xl border border-primary/15 bg-card/40 text-center hover:border-primary/30 hover:shadow-[0_0_30px_rgba(124,58,237,0.06)] transition-all duration-300">
+          <div class="flex justify-center mb-5">
+            <div class="relative">
+              <div class="absolute inset-0 blur-xl bg-pink/20 rounded-full"></div>
+              <svg class="w-12 h-12 relative" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="6" width="36" height="36" rx="4" fill="#ff00ea" fill-opacity="0.15" stroke="#ff00ea" stroke-width="2"/>
+                <polyline points="10,34 18,28 26,32 38,14" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="10,34 18,28 26,32 38,14" stroke="#ff00ea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <p class="text-foreground font-semibold leading-snug">Students lose motivation without a visible goal to work toward</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="py-24 px-6" style="background: linear-gradient(180deg, rgba(26, 26, 46, 0.3) 0%, transparent 100%);">
+    <div class="max-w-[1200px] mx-auto">
+      <h2 class="text-3xl md:text-[2.5rem] font-black text-center text-foreground mb-16 tracking-tight fade-up">
+        Up and running in minutes
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {[
+          { num: "1", title: "Upload your roster", desc: "Import your students via Excel or CSV in seconds." },
+          { num: "2", title: "Define your achievements", desc: "Create musical milestones with point values tied to your program\u2019s goals." },
+          { num: "3", title: "Watch students rise", desc: "Students earn points, climb the leaderboard, and work toward Bronze, Silver, Gold, and Platinum medals." },
+        ].map((step) => (
+          <div class="fade-up text-center">
+            <div class="w-16 h-16 rounded-2xl bg-primary/15 border border-primary/30 text-primary font-black text-2xl flex items-center justify-center mx-auto mb-5 shadow-[0_0_20px_rgba(124,58,237,0.15)]">
+              {step.num}
+            </div>
+            <h3 class="text-xl font-bold text-foreground mb-3">{step.title}</h3>
+            <p class="text-muted leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Highlights -->
+  <section class="py-24 px-6">
+    <div class="max-w-[1200px] mx-auto">
+      <h2 class="text-3xl md:text-[2.5rem] font-black text-center text-foreground mb-14 tracking-tight fade-up">
+        Everything you need to run your program
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Trophy - Achievement Tracking -->
+        <div class="fade-up p-8 rounded-xl border border-primary/15 bg-card/40 text-center hover:border-primary/30 hover:shadow-[0_0_30px_rgba(124,58,237,0.06)] transition-all duration-300">
+          <div class="flex justify-center mb-5">
+            <div class="relative">
+              <div class="absolute inset-0 blur-xl bg-pink/20 rounded-full"></div>
+              <svg class="w-12 h-12 relative" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 8h16v14c0 4.4-3.6 8-8 8s-8-3.6-8-8V8z" stroke="#ff00ea" stroke-width="2"/>
+                <path d="M16 12H10c0 5 3 8 6 9" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.6"/>
+                <path d="M32 12h6c0 5-3 8-6 9" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.6"/>
+                <line x1="24" y1="30" x2="24" y2="36" stroke="#ff00ea" stroke-width="2"/>
+                <rect x="17" y="36" width="14" height="4" rx="2" stroke="#ff00ea" stroke-width="1.5"/>
+                <circle cx="24" cy="18" r="3" fill="#ff00ea" fill-opacity="0.2"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-foreground mb-3">Achievement Tracking</h3>
+          <p class="text-muted leading-relaxed">Students earn points for completing musical milestones. Directors see progress in real time.</p>
+        </div>
+        <!-- TOP 10 - Public Leaderboard -->
+        <div class="fade-up p-8 rounded-xl border border-primary/15 bg-card/40 text-center hover:border-primary/30 hover:shadow-[0_0_30px_rgba(124,58,237,0.06)] transition-all duration-300">
+          <div class="flex justify-center mb-5">
+            <div class="relative">
+              <div class="absolute inset-0 blur-xl bg-pink/20 rounded-full"></div>
+              <svg class="w-12 h-12 relative" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="6" width="36" height="36" rx="4" stroke="#ff00ea" stroke-width="2"/>
+                <text x="24" y="21" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#ff00ea" fill-opacity="0.9">TOP</text>
+                <text x="24" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="14" fill="#ff00ea">10</text>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-foreground mb-3">Public Leaderboard</h3>
+          <p class="text-muted leading-relaxed">A live, school-specific leaderboard students and families can follow from any device.</p>
+        </div>
+        <!-- @ - Mobile Scoring Portal -->
+        <div class="fade-up p-8 rounded-xl border border-primary/15 bg-card/40 text-center hover:border-primary/30 hover:shadow-[0_0_30px_rgba(124,58,237,0.06)] transition-all duration-300">
+          <div class="flex justify-center mb-5">
+            <div class="relative">
+              <div class="absolute inset-0 blur-xl bg-pink/20 rounded-full"></div>
+              <svg class="w-12 h-12 relative" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="24" y="34" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="30" fill="#ff00ea">@</text>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-foreground mb-3">Mobile Scoring Portal</h3>
+          <p class="text-muted leading-relaxed">Staff mark completions from their phone during rehearsals, lessons, or performances.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Educational Benefits -->
+  <section class="py-24 px-6" style="background: linear-gradient(180deg, rgba(26, 26, 46, 0.3) 0%, transparent 100%);">
+    <div class="max-w-[900px] mx-auto text-center fade-up">
+      <h2 class="text-3xl md:text-[2.5rem] font-black text-foreground mb-4 tracking-tight">
+        Built for learning. Powered by motivation.
+      </h2>
+      <p class="text-muted mb-12 max-w-2xl mx-auto">
+        Band Olympics isn't a game — it's a structured achievement system designed to support real musical development.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left">
+        {[
+          "Encourages consistent individual practice",
+          "Creates clear, measurable learning objectives",
+          "Builds a culture of healthy achievement within your program",
+          "Gives directors real-time visibility into student engagement",
+          "Keeps families informed and invested in student progress",
+          "Closed, school-specific environment — no social media distractions",
+          "Supports SEL achievement goals",
+          "FERPA-friendly: students use school-assigned PINs, not personal accounts",
+        ].map((benefit) => (
+          <div class="flex items-center gap-3 p-4 rounded-lg bg-card/30 border border-primary/10">
+            <span class="text-success shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
+            </span>
+            <span class="text-foreground text-sm font-medium">{benefit}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Preview -->
+  <section class="py-24 px-6">
+    <div class="max-w-[1200px] mx-auto">
+      <h2 class="text-3xl md:text-[2.5rem] font-black text-center text-foreground mb-3 tracking-tight fade-up">
+        Simple, transparent pricing
+      </h2>
+      <p class="text-muted text-center mb-2 fade-up">Less than the cost of two reeds per student per year.</p>
+      <p class="text-primary text-center text-sm font-bold mb-14 fade-up">30-day free trial included with every plan</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[800px] mx-auto fade-up">
+        <PricingCard tier="Standard" price="$149" students="Up to 150 students" popular />
+        <PricingCard tier="Growing" price="$189" students="Up to 200 students" />
+        <PricingCard tier="Program" price="$249" students="Up to 300 students" />
+      </div>
+      <p class="text-center mt-10">
+        <a href="/pricing" class="text-primary hover:text-primary-hover text-sm font-bold transition-colors">
+          View all plans &rarr;
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-24 px-6" style="background: linear-gradient(180deg, rgba(26, 26, 46, 0.3) 0%, transparent 100%);">
+    <div class="max-w-[700px] mx-auto">
+      <h2 class="text-3xl md:text-[2.5rem] font-black text-center text-foreground mb-14 tracking-tight fade-up">
+        Frequently asked questions
+      </h2>
+      <div class="fade-up">
+        <FAQAccordion />
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <CTABanner />
+
+  <Footer slot="footer" />
+</BaseLayout>

@@ -1,0 +1,125 @@
+---
+const navLinks = [
+  { label: "Features", href: "/features" },
+  { label: "For Directors", href: "/for-directors" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Contact", href: "/contact" },
+];
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 border-b border-border-subtle"
+  style="background: rgba(10, 10, 10, 0.82); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);"
+>
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 shrink-0 group">
+        <img
+          src="/band-olympics-logo.png"
+          alt="Band Olympics"
+          class="w-10 h-10 drop-shadow-[0_0_10px_rgba(124,58,237,0.5)] group-hover:drop-shadow-[0_0_18px_rgba(124,58,237,0.7)] transition-all duration-300"
+        />
+        <span class="font-black text-lg tracking-tight hidden sm:block">
+          <span class="text-foreground">Band</span><span class="text-primary">Olympics</span><span class="text-pink">Live</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm font-medium text-muted hover:text-primary transition-colors duration-200"
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- CTA Buttons -->
+      <div class="hidden md:flex items-center gap-3">
+        <a
+          href="https://bandolympics.live"
+          class="text-sm font-medium text-muted hover:text-foreground transition-all duration-200 px-4 py-2 rounded-lg border border-border-subtle hover:border-primary/40"
+        >
+          Go to App &rarr;
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center px-5 py-2 text-sm font-bold rounded-lg bg-primary text-primary-foreground hover:bg-primary-hover transition-all duration-200 shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:shadow-[0_0_30px_rgba(124,58,237,0.5)]"
+        >
+          Start Free Trial
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 text-muted hover:text-foreground transition-colors"
+        aria-label="Toggle menu"
+      >
+        <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-border-subtle"
+    style="background: rgba(10, 10, 10, 0.96); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);"
+  >
+    <div class="px-6 py-6 space-y-1">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="block text-base font-medium text-muted hover:text-primary transition-colors py-3 border-b border-border-subtle"
+        >
+          {link.label}
+        </a>
+      ))}
+      <div class="pt-4 space-y-3">
+        <a
+          href="https://bandolympics.live"
+          class="block w-full text-center px-4 py-3 text-sm font-medium rounded-lg border border-border-subtle text-muted hover:text-foreground hover:border-primary/40 transition-all"
+        >
+          Go to App &rarr;
+        </a>
+        <a
+          href="/contact"
+          class="block w-full text-center px-4 py-3 text-sm font-bold rounded-lg bg-primary text-primary-foreground hover:bg-primary-hover transition-all shadow-[0_0_20px_rgba(124,58,237,0.3)]"
+        >
+          Start Free Trial
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn")!;
+  const menu = document.getElementById("mobile-menu")!;
+  const hamburger = document.getElementById("hamburger-icon")!;
+  const closeIcon = document.getElementById("close-icon")!;
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+    hamburger.classList.toggle("hidden");
+    closeIcon.classList.toggle("hidden");
+  });
+
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menu.classList.add("hidden");
+      hamburger.classList.remove("hidden");
+      closeIcon.classList.add("hidden");
+    });
+  });
+</script>

@@ -1,0 +1,111 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CTABanner from "../components/CTABanner.astro";
+
+export const prerender = false;
+
+const features = [
+  {
+    icon: `<svg class="w-10 h-10" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="16" r="8" stroke="#ff00ea" stroke-width="2"/><path d="M12 40c0-6.6 5.4-12 12-12s12 5.4 12 12" stroke="#ff00ea" stroke-width="2" stroke-linecap="round"/><path d="M20 16h8" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.4"/></svg>`,
+    title: "Student Portal",
+    description: "Students check their stats, view achievements, and track their progress using a simple PIN-based login. No email or password required — just a school-assigned PIN.",
+    highlights: ["PIN-based student login", "Achievement badges and medal tiers", "Personal progress dashboard", "No personal data collected"],
+  },
+  {
+    icon: `<svg class="w-10 h-10" viewBox="0 0 48 48" fill="none"><text x="24" y="34" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="30" fill="#ff00ea">@</text></svg>`,
+    title: "Staff Scoring Interface",
+    description: "Score students from any device during rehearsals, concerts, sectionals, and events. Built for speed so directors can focus on teaching, not paperwork.",
+    highlights: ["Score from phone or tablet", "Category-based scoring", "Instrument and section filters", "Bulk scoring for events"],
+  },
+  {
+    icon: `<svg class="w-10 h-10" viewBox="0 0 48 48" fill="none"><rect x="8" y="6" width="32" height="36" rx="3" stroke="#ff00ea" stroke-width="2"/><circle cx="16" cy="14" r="3" fill="#ff00ea" fill-opacity="0.3"/><line x1="22" y1="14" x2="34" y2="14" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.6"/><circle cx="16" cy="24" r="3" fill="#ff00ea" fill-opacity="0.3"/><line x1="22" y1="24" x2="34" y2="24" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.6"/><circle cx="16" cy="34" r="3" fill="#ff00ea" fill-opacity="0.3"/><line x1="22" y1="34" x2="34" y2="34" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.6"/></svg>`,
+    title: "Admin Dashboard",
+    description: "Full control over your program. Manage events, import rosters, configure point values, and invite other staff members — all from one dashboard.",
+    highlights: ["Event creation and management", "Excel/CSV roster import", "Customizable point values", "Multi-editor support"],
+  },
+  {
+    icon: `<svg class="w-10 h-10" viewBox="0 0 48 48" fill="none"><rect x="6" y="6" width="36" height="36" rx="4" stroke="#ff00ea" stroke-width="2"/><text x="24" y="21" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#ff00ea" fill-opacity="0.9">TOP</text><text x="24" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="14" fill="#ff00ea">10</text></svg>`,
+    title: "Real-Time Leaderboard",
+    description: "A public, shareable leaderboard that updates instantly. Students, parents, and administrators can see live rankings at any time.",
+    highlights: ["Live point updates", "Public shareable link", "Medal tier visualization", "Filter by instrument or section"],
+  },
+  {
+    icon: `<svg class="w-10 h-10" viewBox="0 0 48 48" fill="none"><rect x="8" y="4" width="24" height="30" rx="2" stroke="#ff00ea" stroke-width="2"/><rect x="16" y="14" width="24" height="30" rx="2" stroke="#ff00ea" stroke-width="2" stroke-opacity="0.5"/><rect x="14" y="16" width="8" height="8" fill="#ff00ea" fill-opacity="0.15" rx="1"/><line x1="14" y1="28" x2="30" y2="28" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.4"/><line x1="14" y1="32" x2="26" y2="32" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.3"/></svg>`,
+    title: "QR Code Scorecards",
+    description: "Generate printable scorecards with QR codes that link directly to the student's profile. Perfect for concerts and events where directors need quick access.",
+    highlights: ["Printable PDF scorecards", "QR code linking", "Batch generation", "Event-specific cards"],
+  },
+  {
+    icon: `<svg class="w-10 h-10" viewBox="0 0 48 48" fill="none"><rect x="6" y="10" width="36" height="28" rx="3" stroke="#ff00ea" stroke-width="2"/><line x1="6" y1="18" x2="42" y2="18" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.4"/><line x1="6" y1="26" x2="42" y2="26" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.4"/><line x1="6" y1="34" x2="42" y2="34" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.4"/><line x1="20" y1="10" x2="20" y2="38" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.4"/><path d="M22 6l4 4-4 4" stroke="#ff00ea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    title: "Excel Roster Import",
+    description: "Upload your entire student roster in seconds. Band Olympics reads your Excel or CSV file and automatically creates student accounts with PINs.",
+    highlights: ["Excel and CSV support", "Auto-generated PINs", "Duplicate detection", "Bulk import and update"],
+  },
+  {
+    icon: `<svg class="w-10 h-10" viewBox="0 0 48 48" fill="none"><rect x="4" y="12" width="16" height="24" rx="3" stroke="#ff00ea" stroke-width="2"/><rect x="28" y="12" width="16" height="24" rx="3" stroke="#ff00ea" stroke-width="2" stroke-opacity="0.5"/><path d="M20 20h8" stroke="#ff00ea" stroke-width="1.5" stroke-dasharray="2 2"/><path d="M20 28h8" stroke="#ff00ea" stroke-width="1.5" stroke-dasharray="2 2"/><circle cx="12" cy="20" r="2" fill="#ff00ea" fill-opacity="0.4"/><circle cx="36" cy="20" r="2" fill="#ff00ea" fill-opacity="0.2"/></svg>`,
+    title: "Multi-School Support",
+    description: "Each school gets its own isolated environment. Super admins can manage multiple schools, and data is never shared between programs.",
+    highlights: ["School-isolated data", "Per-school configuration", "Centralized super admin", "Independent leaderboards"],
+  },
+];
+---
+
+<BaseLayout title="Features — Band Olympics Live">
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section
+    class="pt-36 pb-20 px-6 text-center"
+    style="background: radial-gradient(ellipse at top center, #4c1d95 0%, #1a1a2e 40%, #0a0a0a 80%);"
+  >
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-[3.2rem] font-black tracking-tight text-foreground mb-5 leading-tight">
+        Every feature your program needs
+      </h1>
+      <p class="text-muted text-lg max-w-xl mx-auto leading-relaxed">
+        Band Olympics is a complete achievement and progress tracking system designed specifically for band directors.
+      </p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-24 px-6">
+    <div class="max-w-[1100px] mx-auto space-y-20">
+      {features.map((feature, i) => (
+        <div class:list={["fade-up flex flex-col md:flex-row gap-10 items-start", i % 2 === 1 && "md:flex-row-reverse"]}>
+          <div class="flex-1">
+            <div class="relative inline-block mb-5">
+              <div class="absolute inset-0 blur-xl bg-pink/20 rounded-full"></div>
+              <div class="relative" set:html={feature.icon} />
+            </div>
+            <h2 class="text-2xl font-black text-foreground mb-3 tracking-tight">{feature.title}</h2>
+            <p class="text-muted mb-6 leading-relaxed">{feature.description}</p>
+            <ul class="space-y-3">
+              {feature.highlights.map((h) => (
+                <li class="flex items-center gap-3">
+                  <span class="text-success shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <span class="text-foreground text-sm font-medium">{h}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="flex-1 w-full rounded-xl border border-primary/15 bg-card/40 p-10 flex items-center justify-center min-h-[220px]">
+            <div class="text-center">
+              <div class="opacity-20 mb-3" set:html={feature.icon} />
+              <p class="text-muted/60 text-sm italic">Preview coming soon</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <CTABanner />
+  <Footer slot="footer" />
+</BaseLayout>

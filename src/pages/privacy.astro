@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+export const prerender = false;
+---
+
+<BaseLayout title="Privacy Policy \u2014 Band Olympics Live">
+  <Header slot="header" />
+
+  <section class="pt-36 pb-24 px-6">
+    <div class="max-w-[750px] mx-auto">
+      <h1 class="text-4xl font-black text-foreground mb-2 tracking-tight">Privacy Policy</h1>
+      <p class="text-muted text-sm mb-14">Last updated: March 27, 2026</p>
+
+      <div class="space-y-10">
+        {[
+          { title: "Overview", body: 'Band Olympics Live ("we," "us," or "our") is committed to protecting the privacy of students, educators, and school administrators who use our platform. This Privacy Policy describes how we collect, use, and safeguard information in connection with our achievement tracking platform for band programs.' },
+          { title: "FERPA Compliance", body: 'Band Olympics Live is designed to comply with the Family Educational Rights and Privacy Act (FERPA). We operate as a "school official" under FERPA, providing a service that the school has authorized. We use student education records only for the purposes for which disclosure was authorized \u2014 namely, to facilitate the achievement tracking features of our platform within the school\'s band program.' },
+          { title: "Data Isolation", body: "Each school's data is completely isolated from all other schools on the platform. Schools cannot access, view, or interact with data from other schools. Student records, scores, events, and leaderboard data are partitioned at the database level to ensure strict separation." },
+          { title: "Student Identification", body: "Students are identified within the platform exclusively by school-assigned PINs. We do not collect student email addresses, phone numbers, home addresses, social security numbers, or any other personally identifiable information directly from students. The only student information stored is the student's name (as provided by the school administrator via roster import) and their school-assigned PIN." },
+          { title: "Third-Party Data Sharing", body: "We do not sell, rent, or share student personal data with third parties for marketing, advertising, or any purpose unrelated to providing our service. We may use third-party service providers (such as hosting and email delivery) that process data on our behalf under strict contractual obligations to maintain confidentiality." },
+          { title: "Data Storage and Security", body: "All data is stored securely using Supabase (PostgreSQL) with encryption at rest and in transit. Access to the database is restricted to authorized personnel only. We implement industry-standard security measures to protect against unauthorized access, alteration, disclosure, or destruction of data." },
+          { title: "Data Retention and Deletion", body: "School administrators may request deletion of all school data at any time by contacting us. Upon receiving a verified deletion request, we will remove all associated student records, scores, and school data from our systems within 30 days." },
+          { title: "Changes to This Policy", body: "We may update this Privacy Policy from time to time. We will notify registered school administrators of material changes via email. Continued use of the platform after changes constitutes acceptance of the updated policy." },
+        ].map((section) => (
+          <div>
+            <h2 class="text-xl font-bold text-foreground mb-3">{section.title}</h2>
+            <p class="text-muted leading-relaxed">{section.body}</p>
+          </div>
+        ))}
+
+        <div>
+          <h2 class="text-xl font-bold text-foreground mb-3">Data We Collect</h2>
+          <p class="text-muted leading-relaxed mb-4">We collect the following categories of information:</p>
+          <ul class="space-y-3 ml-1">
+            {[
+              { label: "School administrator information:", desc: "Name, email address, and school affiliation (collected during registration)" },
+              { label: "Staff editor information:", desc: "Name and email address (collected when administrators invite editors)" },
+              { label: "Student information:", desc: "Student name and school-assigned PIN (imported by school administrators)" },
+              { label: "Achievement data:", desc: "Scores, event participation, medal tiers, and leaderboard rankings" },
+              { label: "Usage data:", desc: "Basic analytics to improve the platform experience" },
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-sm">
+                <span class="text-primary mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-primary"></span>
+                <span class="text-muted"><strong class="text-foreground">{item.label}</strong> {item.desc}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-foreground mb-3">Data Requests</h2>
+          <p class="text-muted leading-relaxed">
+            Parents, guardians, or eligible students who wish to review, correct, or request deletion of student data should contact their school administrator. School administrators can export or delete data directly through the platform. For additional data requests, contact us at <a href="mailto:support@bandolympics.live" class="text-primary hover:text-primary-hover font-semibold transition-colors">support@bandolympics.live</a>.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-foreground mb-3">Contact</h2>
+          <p class="text-muted leading-relaxed">
+            For questions or concerns about this Privacy Policy, contact us at <a href="mailto:support@bandolympics.live" class="text-primary hover:text-primary-hover font-semibold transition-colors">support@bandolympics.live</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

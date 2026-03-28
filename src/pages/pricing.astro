@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import PricingCard from "../components/PricingCard.astro";
+import FAQAccordion from "../components/FAQAccordion.astro";
+
+export const prerender = false;
+
+const tiers = [
+  { tier: "Starter", price: "$99", students: "Up to 100 students" },
+  { tier: "Standard", price: "$149", students: "Up to 150 students", popular: true },
+  { tier: "Growing", price: "$189", students: "Up to 200 students" },
+  { tier: "Program", price: "$249", students: "Up to 300 students" },
+  { tier: "Unlimited", price: "$299", students: "300+ students" },
+];
+---
+
+<BaseLayout title="Pricing \u2014 Band Olympics Live">
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section
+    class="pt-36 pb-20 px-6 text-center"
+    style="background: radial-gradient(ellipse at top center, #4c1d95 0%, #1a1a2e 40%, #0a0a0a 80%);"
+  >
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-[3.2rem] font-black tracking-tight text-foreground mb-5 leading-tight">
+        Simple, transparent pricing
+      </h1>
+      <p class="text-muted text-lg max-w-xl mx-auto mb-3 leading-relaxed">
+        One flat annual fee. No per-student charges. No hidden costs. Less than the cost of two reeds per student per year.
+      </p>
+      <p class="text-primary font-bold">30-day free trial included with every plan</p>
+    </div>
+  </section>
+
+  <!-- Pricing Grid -->
+  <section class="py-24 px-6">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        {tiers.map((t) => (
+          <PricingCard {...t} />
+        ))}
+      </div>
+
+      <div class="mt-14 text-center space-y-3">
+        <p class="text-muted text-sm">All plans include unlimited staff editor accounts, all features, and email support.</p>
+        <p class="text-muted text-sm">Need more than 300 students? <a href="/contact" class="text-primary hover:text-primary-hover font-semibold transition-colors">Contact us</a> for custom pricing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="py-24 px-6" style="background: linear-gradient(180deg, rgba(26, 26, 46, 0.3) 0%, transparent 100%);">
+    <div class="max-w-[900px] mx-auto">
+      <h2 class="text-3xl md:text-[2.5rem] font-black text-center text-foreground mb-14 tracking-tight fade-up">Every plan includes</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 fade-up">
+        {[
+          "Unlimited staff editor accounts",
+          "Real-time public leaderboard",
+          "Student PIN-based login",
+          "Excel/CSV roster import",
+          "QR code scorecards",
+          "Mobile-friendly scoring",
+          "Medal tier system",
+          "Event management",
+          "Email support",
+        ].map((item) => (
+          <div class="flex items-center gap-3 p-4 rounded-lg bg-card/30 border border-primary/10">
+            <span class="text-success shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
+            </span>
+            <span class="text-foreground text-sm font-medium">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 px-6">
+    <div class="max-w-[700px] mx-auto">
+      <h2 class="text-3xl md:text-[2.5rem] font-black text-center text-foreground mb-14 tracking-tight fade-up">Frequently asked questions</h2>
+      <div class="fade-up">
+        <FAQAccordion />
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

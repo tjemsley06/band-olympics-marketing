@@ -1,0 +1,84 @@
+---
+const links = [
+  { label: "Features", href: "/features" },
+  { label: "For Directors", href: "/for-directors" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms of Service", href: "/terms" },
+  { label: "Contact", href: "/contact" },
+];
+---
+
+<footer class="border-t border-border-subtle" style="background: linear-gradient(180deg, #0a0a0a 0%, #0d0d1a 100%);">
+  <div class="max-w-[1200px] mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <!-- Brand -->
+      <div class="flex flex-col gap-4">
+        <a href="/" class="flex items-center gap-3">
+          <img
+            src="/band-olympics-logo.png"
+            alt="Band Olympics"
+            class="w-10 h-10 drop-shadow-[0_0_10px_rgba(124,58,237,0.4)]"
+          />
+          <span class="font-black text-lg">
+            <span class="text-foreground">Band</span><span class="text-primary">Olympics</span><span class="text-pink">Live</span>
+          </span>
+        </a>
+        <p class="text-sm text-primary/80 font-semibold tracking-wide">Own Your Practice. Earn Your Medal.</p>
+        <p class="text-xs text-muted leading-relaxed max-w-xs">
+          The achievement platform that helps band directors motivate students, track musical growth, and celebrate real progress.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3 class="text-xs font-bold text-foreground mb-5 uppercase tracking-[0.15em]">Navigation</h3>
+        <ul class="space-y-3">
+          {links.map((link) => (
+            <li>
+              <a href={link.href} class="text-sm text-muted hover:text-primary transition-colors duration-200">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- App Access -->
+      <div>
+        <h3 class="text-xs font-bold text-foreground mb-5 uppercase tracking-[0.15em]">Get Started</h3>
+        <ul class="space-y-3">
+          <li>
+            <a
+              href="/contact"
+              class="text-sm text-muted hover:text-primary transition-colors duration-200"
+            >
+              Start Free Trial
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://bandolympics.live/login"
+              class="text-sm text-muted hover:text-primary transition-colors duration-200"
+            >
+              Login to Band Olympics &rarr;
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:support@bandolympics.live"
+              class="text-sm text-muted hover:text-primary transition-colors duration-200"
+            >
+              support@bandolympics.live
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-8 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-muted/60">&copy; 2026 Band Olympics Live. All rights reserved.</p>
+      <p class="text-xs text-muted/40 italic">Own Your Practice. Earn Your Medal.</p>
+    </div>
+  </div>
+</footer>

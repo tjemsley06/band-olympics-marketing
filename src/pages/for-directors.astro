@@ -1,0 +1,183 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CTABanner from "../components/CTABanner.astro";
+
+export const prerender = false;
+
+const benefits = [
+  { text: "Increases individual student practice time", desc: "When students can see their ranking and how close they are to the next medal tier, they naturally practice more to climb the leaderboard." },
+  { text: "Creates measurable, trackable learning objectives", desc: "Assign point values to specific skills and behaviors. Track progress over weeks, months, or the entire school year." },
+  { text: "Builds a culture of healthy achievement within the program", desc: "Students work toward their own goals and see their peers doing the same \u2014 building camaraderie and drive without the pressure of high-stakes testing." },
+  { text: "Gives directors real-time data on student engagement", desc: "See which students are excelling, who needs support, and how the program is performing \u2014 all in one dashboard." },
+  { text: "No social media \u2014 closed, school-specific environment", desc: "Band Olympics is not a social network. There are no feeds, comments, or public profiles. Each school is a walled garden." },
+  { text: "Supports SEL achievement goals", desc: "Band Olympics tracks more than playing ability. Recognize students for leadership, teamwork, attendance, and attitude." },
+  { text: "FERPA-friendly: students log in with school-assigned PINs", desc: "No student email addresses, phone numbers, or personal accounts. Just a school-assigned PIN that directors control." },
+];
+
+const comparison = [
+  { feature: "Real-time progress", paper: false, bo: true },
+  { feature: "Public leaderboard", paper: false, bo: true },
+  { feature: "Automatic point calculation", paper: false, bo: true },
+  { feature: "Lost scorecards", paper: "Risk", bo: "Digital backup" },
+  { feature: "Parent visibility", paper: false, bo: true },
+  { feature: "Double points days", paper: false, bo: true },
+];
+---
+
+<BaseLayout title="For Band Directors \u2014 Band Olympics Live">
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section
+    class="pt-36 pb-20 px-6 text-center"
+    style="background: radial-gradient(ellipse at top center, #4c1d95 0%, #1a1a2e 40%, #0a0a0a 80%);"
+  >
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-[3.2rem] font-black tracking-tight text-foreground mb-5 leading-tight">
+        Everything your program needs to thrive
+      </h1>
+      <p class="text-muted text-lg max-w-xl mx-auto leading-relaxed">
+        Band Olympics gives you the tools to motivate every student in your program — from the first chair to the student who just needs a reason to pick up their instrument.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pain Points -->
+  <section class="py-24 px-6">
+    <div class="max-w-[1000px] mx-auto">
+      <h2 class="text-3xl md:text-[2.5rem] font-black text-center text-foreground mb-3 tracking-tight fade-up">The old way doesn't work</h2>
+      <p class="text-muted text-center mb-14 fade-up">Paper scorecards, spreadsheets, and manual tracking cost you time and lose student data.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Paper -->
+        <div class="fade-up p-8 rounded-xl border border-danger/20 bg-danger/[0.04] text-center">
+          <div class="flex justify-center mb-5">
+            <div class="relative">
+              <div class="absolute inset-0 blur-xl bg-pink/20 rounded-full"></div>
+              <svg class="w-12 h-12 relative" viewBox="0 0 48 48" fill="none">
+                <rect x="10" y="4" width="28" height="40" rx="3" stroke="#ff00ea" stroke-width="2"/>
+                <circle cx="15" cy="12" r="2" fill="#ff00ea" fill-opacity="0.5"/>
+                <circle cx="15" cy="24" r="2" fill="#ff00ea" fill-opacity="0.5"/>
+                <circle cx="15" cy="36" r="2" fill="#ff00ea" fill-opacity="0.5"/>
+                <line x1="20" y1="10" x2="34" y2="10" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.6"/>
+                <line x1="20" y1="14" x2="30" y2="14" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.3"/>
+                <line x1="20" y1="22" x2="34" y2="22" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.6"/>
+                <line x1="20" y1="26" x2="28" y2="26" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.3"/>
+                <line x1="20" y1="34" x2="34" y2="34" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.6"/>
+                <line x1="20" y1="38" x2="32" y2="38" stroke="#ff00ea" stroke-width="1.5" stroke-opacity="0.3"/>
+              </svg>
+            </div>
+          </div>
+          <p class="text-foreground font-semibold text-sm leading-snug">Paper scorecards get lost, damaged, or forgotten at home</p>
+        </div>
+        <!-- Clock -->
+        <div class="fade-up p-8 rounded-xl border border-danger/20 bg-danger/[0.04] text-center">
+          <div class="flex justify-center mb-5">
+            <div class="relative">
+              <div class="absolute inset-0 blur-xl bg-pink/20 rounded-full"></div>
+              <svg class="w-12 h-12 relative" viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="18" stroke="#ff00ea" stroke-width="2"/>
+                <circle cx="24" cy="24" r="14" stroke="#ff00ea" stroke-width="1" stroke-opacity="0.2"/>
+                <line x1="24" y1="24" x2="24" y2="14" stroke="#ff00ea" stroke-width="2" stroke-linecap="round"/>
+                <line x1="24" y1="24" x2="32" y2="24" stroke="#ff00ea" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="24" cy="24" r="2" fill="#ff00ea" fill-opacity="0.4"/>
+              </svg>
+            </div>
+          </div>
+          <p class="text-foreground font-semibold text-sm leading-snug">Hours spent entering data into spreadsheets every week</p>
+        </div>
+        <!-- Chart down -->
+        <div class="fade-up p-8 rounded-xl border border-danger/20 bg-danger/[0.04] text-center">
+          <div class="flex justify-center mb-5">
+            <div class="relative">
+              <div class="absolute inset-0 blur-xl bg-pink/20 rounded-full"></div>
+              <svg class="w-12 h-12 relative" viewBox="0 0 48 48" fill="none">
+                <rect x="6" y="6" width="36" height="36" rx="4" fill="#ff00ea" fill-opacity="0.15" stroke="#ff00ea" stroke-width="2"/>
+                <polyline points="10,14 18,20 26,16 38,34" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="10,14 18,20 26,16 38,34" stroke="#ff00ea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <p class="text-foreground font-semibold text-sm leading-snug">No visibility into progress means students lose motivation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Educational Benefits -->
+  <section class="py-24 px-6" style="background: linear-gradient(180deg, rgba(26, 26, 46, 0.3) 0%, transparent 100%);">
+    <div class="max-w-[900px] mx-auto">
+      <h2 class="text-3xl md:text-[2.5rem] font-black text-center text-foreground mb-14 tracking-tight fade-up">How Band Olympics helps your program</h2>
+      <div class="space-y-4">
+        {benefits.map((b) => (
+          <div class="fade-up p-6 rounded-xl border border-primary/15 bg-card/40 hover:border-primary/30 transition-all duration-200">
+            <div class="flex items-start gap-4">
+              <span class="text-success mt-1 shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <div>
+                <h3 class="text-foreground font-bold mb-1">{b.text}</h3>
+                <p class="text-muted text-sm leading-relaxed">{b.desc}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="py-24 px-6">
+    <div class="max-w-[700px] mx-auto">
+      <h2 class="text-3xl md:text-[2.5rem] font-black text-center text-foreground mb-14 tracking-tight fade-up">
+        Why directors choose Band Olympics over paper scorecards
+      </h2>
+      <div class="fade-up overflow-x-auto rounded-xl border border-primary/20 overflow-hidden">
+        <table class="w-full">
+          <thead>
+            <tr class="border-b border-primary/15" style="background: rgba(124, 58, 237, 0.06);">
+              <th class="text-left px-6 py-4 text-sm font-bold text-foreground">Feature</th>
+              <th class="text-center px-6 py-4 text-sm font-bold text-muted">Paper</th>
+              <th class="text-center px-6 py-4 text-sm font-bold text-primary">Band Olympics</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparison.map((row) => (
+              <tr class="border-b border-primary/10 last:border-b-0">
+                <td class="px-6 py-4 text-sm text-foreground font-medium">{row.feature}</td>
+                <td class="px-6 py-4 text-center">
+                  {typeof row.paper === "boolean" ? (
+                    row.paper ? (
+                      <span class="text-success text-lg">&#10003;</span>
+                    ) : (
+                      <span class="text-danger text-lg">&#10007;</span>
+                    )
+                  ) : (
+                    <span class="text-warning text-xs font-semibold px-2 py-1 bg-warning/10 rounded">{row.paper}</span>
+                  )}
+                </td>
+                <td class="px-6 py-4 text-center">
+                  {typeof row.bo === "boolean" ? (
+                    row.bo ? (
+                      <span class="text-success text-lg">&#10003;</span>
+                    ) : (
+                      <span class="text-danger text-lg">&#10007;</span>
+                    )
+                  ) : (
+                    <span class="text-success text-xs font-semibold px-2 py-1 bg-success/10 rounded">{row.bo}</span>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner title="Ready to ditch the paper scorecards?" subtitle="Join the growing community of directors using Band Olympics to track progress, celebrate achievement, and inspire students to practice." />
+  <Footer slot="footer" />
+</BaseLayout>

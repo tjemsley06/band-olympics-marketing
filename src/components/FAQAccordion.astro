@@ -1,0 +1,65 @@
+---
+const faqs = [
+  {
+    q: "Is student data secure and FERPA compliant?",
+    a: "Yes. Each school\u2019s data is completely isolated. Students log in with a school-assigned PIN, not personal accounts.",
+  },
+  {
+    q: "Can we try it before committing?",
+    a: "Yes \u2014 every new school gets a 30-day free trial.",
+  },
+  {
+    q: "Does it work for orchestra or jazz band?",
+    a: "Yes \u2014 instruments and tracks are fully customizable.",
+  },
+  {
+    q: "What if we have more than 300 students?",
+    a: "Contact us for custom pricing.",
+  },
+  {
+    q: "Can multiple directors use the same account?",
+    a: "Yes! Band Olympics supports two account types. Editor accounts are great for private lesson staff and student teachers. Admin accounts give assistant directors full access \u2014 you can add up to 3 directors per school.",
+  },
+  {
+    q: "What if we need to cancel?",
+    a: "Band Olympics is a small annual fee \u2014 we do not offer refunds on active subscriptions. However, you can cancel at any time during the free 30-day trial with no charge.",
+  },
+];
+---
+
+<div class="space-y-3">
+  {faqs.map((faq, i) => (
+    <div class="border border-primary/15 rounded-xl overflow-hidden bg-card/40 hover:border-primary/30 transition-colors duration-200">
+      <button
+        class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left text-foreground font-semibold hover:bg-primary/5 transition-colors duration-200"
+        data-index={i}
+      >
+        <span class="pr-4">{faq.q}</span>
+        <svg class="faq-chevron w-5 h-5 text-primary shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div class="faq-content hidden px-6 pt-1 pb-6">
+        <p class="text-muted leading-relaxed">{faq.a}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
+<script>
+  document.querySelectorAll(".faq-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const content = btn.nextElementSibling as HTMLElement;
+      const chevron = btn.querySelector(".faq-chevron") as HTMLElement;
+      const isOpen = !content.classList.contains("hidden");
+
+      document.querySelectorAll(".faq-content").forEach((c) => c.classList.add("hidden"));
+      document.querySelectorAll(".faq-chevron").forEach((c) => c.classList.remove("rotate-180"));
+
+      if (!isOpen) {
+        content.classList.remove("hidden");
+        chevron.classList.add("rotate-180");
+      }
+    });
+  });
+</script>
