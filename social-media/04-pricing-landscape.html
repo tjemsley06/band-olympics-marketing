@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif;
+    display: flex;
+    background-image: radial-gradient(ellipse at top center, #4c1d95 0%, #1a1a2e 40%, #0a0a0a 80%);
+    position: relative;
+  }
+  .content { position: relative; z-index: 1; padding: 40px 50px; flex: 1; display: flex; align-items: center; gap: 48px; }
+  .left { flex-shrink: 0; width: 400px; }
+  .left h1 { font-size: 38px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 10px; }
+  .left p { font-size: 17px; color: #a0a0b0; font-weight: 400; line-height: 1.5; margin-bottom: 20px; }
+  .price-hero { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; }
+  .price-big {
+    font-size: 72px; font-weight: 900; letter-spacing: -0.03em;
+    background: linear-gradient(to bottom, #fff, #7c3aed);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    line-height: 1;
+  }
+  .price-per { font-size: 20px; font-weight: 500; color: #a0a0b0; }
+  .trial-badge {
+    display: inline-block; padding: 10px 24px; border-radius: 100px;
+    background: rgba(124,58,237,0.2); border: 1px solid rgba(124,58,237,0.4);
+    font-size: 18px; font-weight: 700; color: #7c3aed;
+  }
+  .right { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+  .tier {
+    background: rgba(26,26,46,0.4); border: 1px solid rgba(124,58,237,0.15);
+    border-radius: 10px; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .tier.popular { border-color: #7c3aed; background: rgba(124,58,237,0.1); }
+  .tier-left { display: flex; align-items: center; gap: 12px; }
+  .tier-name { font-size: 16px; font-weight: 700; }
+  .popular-tag {
+    font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+    color: #7c3aed; background: rgba(124,58,237,0.15); padding: 3px 8px; border-radius: 4px;
+  }
+  .tier-right { text-align: right; }
+  .tier-price { font-size: 22px; font-weight: 900; }
+  .tier-students { font-size: 12px; font-weight: 500; color: #a0a0b0; }
+  .footer {
+    position: absolute; bottom: 20px; right: 50px;
+    font-size: 16px; font-weight: 500; color: #a0a0b0;
+  }
+</style>
+</head>
+<body>
+  <div class="content">
+    <div class="left">
+      <h1>Simple, Transparent Pricing</h1>
+      <p>Less than the cost of two reeds per student per year.</p>
+      <div class="price-hero">
+        <div class="price-big">$99</div>
+        <div class="price-per">/year<br>starting</div>
+      </div>
+      <div class="trial-badge">30-Day Free Trial</div>
+    </div>
+    <div class="right">
+      <div class="tier">
+        <div class="tier-left">
+          <span class="tier-name">Starter</span>
+        </div>
+        <div class="tier-right">
+          <div class="tier-price">$99</div>
+          <div class="tier-students">Up to 100 students</div>
+        </div>
+      </div>
+      <div class="tier popular">
+        <div class="tier-left">
+          <span class="tier-name">Standard</span>
+          <span class="popular-tag">Most Popular</span>
+        </div>
+        <div class="tier-right">
+          <div class="tier-price">$149</div>
+          <div class="tier-students">Up to 150 students</div>
+        </div>
+      </div>
+      <div class="tier">
+        <div class="tier-left">
+          <span class="tier-name">Growing</span>
+        </div>
+        <div class="tier-right">
+          <div class="tier-price">$189</div>
+          <div class="tier-students">Up to 200 students</div>
+        </div>
+      </div>
+      <div class="tier">
+        <div class="tier-left">
+          <span class="tier-name">Program</span>
+        </div>
+        <div class="tier-right">
+          <div class="tier-price">$249</div>
+          <div class="tier-students">Up to 250 students</div>
+        </div>
+      </div>
+      <div class="tier">
+        <div class="tier-left">
+          <span class="tier-name">Unlimited</span>
+        </div>
+        <div class="tier-right">
+          <div class="tier-price">$299</div>
+          <div class="tier-students">300+ students</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">bandolympicslive.com</div>
+</body>
+</html>

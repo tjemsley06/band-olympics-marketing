@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif;
+    display: flex; align-items: center; justify-content: center;
+    background-image: radial-gradient(ellipse at top center, #4c1d95 0%, #1a1a2e 40%, #0a0a0a 80%);
+    position: relative;
+  }
+  .grid-overlay {
+    position: absolute; inset: 0; opacity: 0.03;
+    background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .content {
+    position: relative; z-index: 1; display: flex; align-items: center; gap: 48px; padding: 50px 60px;
+  }
+  .left { flex-shrink: 0; text-align: center; }
+  .logo { width: 120px; height: 120px; filter: drop-shadow(0 0 30px rgba(124,58,237,0.6)); }
+  .brand {
+    font-size: 16px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase;
+    background: linear-gradient(to bottom, #fff, #7c3aed, #ff00ea);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text; margin-top: 12px;
+  }
+  .right { flex: 1; }
+  .tagline {
+    font-size: 44px; font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px;
+  }
+  .tagline .accent { color: #7c3aed; }
+  .subtitle {
+    font-size: 18px; font-weight: 400; color: #a0a0b0; line-height: 1.5; max-width: 560px;
+  }
+  .footer {
+    position: absolute; bottom: 24px; right: 60px;
+    font-size: 16px; font-weight: 500; color: #a0a0b0;
+  }
+</style>
+</head>
+<body>
+  <div class="grid-overlay"></div>
+  <div class="content">
+    <div class="left">
+      <img src="band-olympics-logo.png" alt="Band Olympics" class="logo">
+      <div class="brand">Band Olympics Live</div>
+    </div>
+    <div class="right">
+      <h1 class="tagline">Own Your Practice.<br><span class="accent">Earn Your Medal.</span></h1>
+      <p class="subtitle">The achievement platform that helps band directors motivate students, track musical growth, and celebrate real progress.</p>
+    </div>
+  </div>
+  <div class="footer">bandolympicslive.com</div>
+</body>
+</html>

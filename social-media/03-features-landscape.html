@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif;
+    display: flex; flex-direction: column;
+    background-image: radial-gradient(ellipse at top center, #4c1d95 0%, #1a1a2e 40%, #0a0a0a 80%);
+    position: relative;
+  }
+  .content { position: relative; z-index: 1; padding: 40px 50px; flex: 1; display: flex; flex-direction: column; }
+  .header { text-align: center; margin-bottom: 28px; }
+  .header h1 { font-size: 38px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 6px; }
+  .header p { font-size: 17px; color: #a0a0b0; font-weight: 400; }
+  .cards { display: flex; gap: 16px; flex: 1; }
+  .card {
+    background: rgba(26,26,46,0.4); border: 1px solid rgba(124,58,237,0.15);
+    border-radius: 14px; padding: 24px; flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px;
+  }
+  .icon-wrap {
+    width: 52px; height: 52px; display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .icon-glow {
+    position: absolute; width: 52px; height: 52px; border-radius: 50%;
+    background: rgba(255,0,234,0.15); filter: blur(12px);
+  }
+  .icon-wrap svg { position: relative; z-index: 1; width: 40px; height: 40px; color: #ff00ea; }
+  .card-title { font-size: 20px; font-weight: 800; }
+  .card-desc { font-size: 15px; font-weight: 400; color: #a0a0b0; line-height: 1.45; }
+  .footer-bar {
+    text-align: right; padding-top: 14px; margin-top: 6px;
+    border-top: 1px solid rgba(124,58,237,0.2);
+  }
+  .footer-url { font-size: 16px; font-weight: 500; color: #a0a0b0; }
+</style>
+</head>
+<body>
+  <div class="content">
+    <div class="header">
+      <h1>Everything You Need</h1>
+      <p>To run your band program digitally.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon-wrap">
+          <div class="icon-glow"></div>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+          </svg>
+        </div>
+        <div class="card-title">Achievement Tracking</div>
+        <div class="card-desc">Students earn points for musical milestones. Medal tiers keep them motivated.</div>
+      </div>
+      <div class="card">
+        <div class="icon-wrap">
+          <div class="icon-glow"></div>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+        </div>
+        <div class="card-title">Public Leaderboard</div>
+        <div class="card-desc">A live, school-specific leaderboard for students and families.</div>
+      </div>
+      <div class="card">
+        <div class="icon-wrap">
+          <div class="icon-glow"></div>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <div class="card-title">Mobile Scoring</div>
+        <div class="card-desc">Staff mark completions from their phone during rehearsals.</div>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <div class="footer-url">bandolympicslive.com</div>
+    </div>
+  </div>
+</body>
+</html>
