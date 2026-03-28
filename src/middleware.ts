@@ -5,6 +5,11 @@ const COOKIE_NAME = "bo_site_access";
 const COOKIE_VALUE = "authorized";
 
 export const onRequest = defineMiddleware(async ({ request, cookies, url }, next) => {
+  // Always allow the contact page (public)
+  if (url.pathname === "/contact" || url.pathname === "/contact/") {
+    return next();
+  }
+
   // Always allow the password verification endpoint
   if (url.pathname === "/api/verify-password") {
     return next();
