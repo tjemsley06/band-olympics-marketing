@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1080px; overflow: hidden;
+    background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif;
+    display: flex; flex-direction: column;
+    background-image: radial-gradient(ellipse at top center, #4c1d95 0%, #1a1a2e 40%, #0a0a0a 80%);
+    position: relative;
+  }
+  .content { position: relative; z-index: 1; padding: 56px 60px; flex: 1; display: flex; flex-direction: column; }
+  .header { text-align: center; margin-bottom: 12px; }
+  .header h1 { font-size: 46px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 10px; }
+  .header p { font-size: 20px; color: #a0a0b0; font-weight: 400; }
+  .smart-box {
+    background: rgba(124,58,237,0.1); border: 1px solid rgba(124,58,237,0.3);
+    border-radius: 14px; padding: 20px 28px; margin: 20px 0 28px; text-align: center;
+  }
+  .smart-title { font-size: 20px; font-weight: 800; color: #7c3aed; margin-bottom: 8px; }
+  .smart-letters { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+  .smart-item { font-size: 17px; font-weight: 600; }
+  .smart-item span { color: #7c3aed; font-weight: 900; font-size: 19px; }
+  .checks { display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .check {
+    display: flex; align-items: center; gap: 16px;
+    background: rgba(26,26,46,0.3); border: 1px solid rgba(124,58,237,0.1);
+    border-radius: 10px; padding: 16px 20px;
+  }
+  .check-icon { color: #22c55e; flex-shrink: 0; }
+  .check-icon svg { width: 24px; height: 24px; }
+  .check-text { font-size: 20px; font-weight: 600; }
+  .footer-bar {
+    text-align: center; padding-top: 18px; margin-top: 12px;
+    border-top: 1px solid rgba(124,58,237,0.2);
+  }
+  .footer-url { font-size: 18px; font-weight: 500; color: #a0a0b0; }
+</style>
+</head>
+<body>
+  <div class="content">
+    <div class="header">
+      <h1>Built for Learning</h1>
+      <p>A structured achievement system for real musical development.</p>
+    </div>
+    <div class="smart-box">
+      <div class="smart-title">Supports SMART Achievement Goals</div>
+      <div class="smart-letters">
+        <div class="smart-item"><span>S</span>pecific</div>
+        <div class="smart-item"><span>M</span>easurable</div>
+        <div class="smart-item"><span>A</span>ttainable</div>
+        <div class="smart-item"><span>R</span>elevant</div>
+        <div class="smart-item"><span>T</span>ime-bound</div>
+      </div>
+    </div>
+    <div class="checks">
+      <div class="check">
+        <span class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></span>
+        <span class="check-text">Encourages consistent individual practice</span>
+      </div>
+      <div class="check">
+        <span class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></span>
+        <span class="check-text">Creates clear, measurable learning objectives</span>
+      </div>
+      <div class="check">
+        <span class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></span>
+        <span class="check-text">Builds a culture of healthy achievement</span>
+      </div>
+      <div class="check">
+        <span class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></span>
+        <span class="check-text">Real-time visibility into student engagement</span>
+      </div>
+      <div class="check">
+        <span class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></span>
+        <span class="check-text">FERPA-friendly: school-assigned PINs only</span>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <div class="footer-url">bandolympicslive.com</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1080px; overflow: hidden;
+    background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif;
+    display: flex; flex-direction: column;
+    background-image: radial-gradient(ellipse at top center, #4c1d95 0%, #1a1a2e 40%, #0a0a0a 80%);
+    position: relative;
+  }
+  .content { position: relative; z-index: 1; padding: 60px; flex: 1; display: flex; flex-direction: column; }
+  .header { text-align: center; margin-bottom: 48px; }
+  .header h1 { font-size: 52px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .header p { font-size: 22px; color: #a0a0b0; font-weight: 400; }
+  .cards { display: flex; flex-direction: column; gap: 20px; flex: 1; }
+  .card {
+    background: rgba(26,26,46,0.4); border: 1px solid rgba(124,58,237,0.15);
+    border-radius: 16px; padding: 32px; display: flex; align-items: center; gap: 24px;
+  }
+  .icon-wrap {
+    width: 64px; height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .icon-glow {
+    position: absolute; width: 64px; height: 64px; border-radius: 50%;
+    background: rgba(255,0,234,0.15); filter: blur(16px);
+  }
+  .icon-wrap svg { position: relative; z-index: 1; width: 48px; height: 48px; color: #ff00ea; }
+  .card-text { font-size: 24px; font-weight: 600; line-height: 1.4; }
+  .footer-bar {
+    text-align: center; padding: 24px 0 0; margin-top: 12px;
+    border-top: 1px solid rgba(124,58,237,0.2);
+  }
+  .footer-cta { font-size: 22px; font-weight: 700; color: #7c3aed; margin-bottom: 6px; }
+  .footer-url { font-size: 18px; font-weight: 500; color: #a0a0b0; }
+</style>
+</head>
+<body>
+  <div class="content">
+    <div class="header">
+      <h1>Sound Familiar?</h1>
+      <p>Every band director has faced these challenges.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon-wrap">
+          <div class="icon-glow"></div>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12l-2 2m0 0l2 2m-2-2h6" opacity="0.5" transform="translate(12,-4) rotate(45)"/>
+          </svg>
+        </div>
+        <span class="card-text">Paper scorecards get lost before the semester ends</span>
+      </div>
+      <div class="card">
+        <div class="icon-wrap">
+          <div class="icon-glow"></div>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" stroke-width="1.5"/>
+            <path stroke-linecap="round" stroke-width="1.5" d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+        <span class="card-text">Hours spent entering data into spreadsheets every week</span>
+      </div>
+      <div class="card">
+        <div class="icon-wrap">
+          <div class="icon-glow"></div>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            <path stroke-linecap="round" stroke-width="2" d="M4 20L20 4" opacity="0.5"/>
+          </svg>
+        </div>
+        <span class="card-text">Students lose motivation without visible goals or progress</span>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <div class="footer-cta">There's a better way.</div>
+      <div class="footer-url">bandolympicslive.com</div>
+    </div>
+  </div>
+</body>
+</html>

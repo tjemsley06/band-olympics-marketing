@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1920px; overflow: hidden;
+    background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background-image: radial-gradient(ellipse at top center, #4c1d95 0%, #1a1a2e 35%, #0a0a0a 70%);
+    position: relative;
+  }
+  .grid-overlay {
+    position: absolute; inset: 0; opacity: 0.03;
+    background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .content { position: relative; z-index: 1; text-align: center; padding: 80px 60px; }
+  .logo { width: 200px; height: 200px; margin: 0 auto 40px; filter: drop-shadow(0 0 50px rgba(124,58,237,0.6)); }
+  .brand {
+    font-size: 32px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase;
+    background: linear-gradient(to bottom, #fff, #7c3aed, #ff00ea);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text; margin-bottom: 64px;
+  }
+  .tagline {
+    font-size: 72px; font-weight: 900; line-height: 1.12; letter-spacing: -0.02em;
+    max-width: 900px; margin: 0 auto 40px;
+  }
+  .tagline .accent { color: #7c3aed; }
+  .subtitle {
+    font-size: 28px; font-weight: 400; color: #a0a0b0; max-width: 700px;
+    margin: 0 auto; line-height: 1.6;
+  }
+  .footer {
+    position: absolute; bottom: 60px; left: 0; right: 0; text-align: center;
+  }
+  .footer-pill {
+    display: inline-block; padding: 12px 32px; border-radius: 100px;
+    border: 1px solid rgba(124,58,237,0.3); background: rgba(26,26,46,0.6);
+    font-size: 20px; font-weight: 500; color: #a0a0b0;
+  }
+</style>
+</head>
+<body>
+  <div class="grid-overlay"></div>
+  <div class="content">
+    <img src="band-olympics-logo.png" alt="Band Olympics" class="logo">
+    <div class="brand">Band Olympics Live</div>
+    <h1 class="tagline">Own Your Practice.<br><span class="accent">Earn Your Medal.</span></h1>
+    <p class="subtitle">The achievement platform that helps band directors motivate students, track musical growth, and celebrate real progress.</p>
+  </div>
+  <div class="footer">
+    <span class="footer-pill">bandolympicslive.com</span>
+  </div>
+</body>
+</html>
