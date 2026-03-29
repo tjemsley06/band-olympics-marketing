@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Core palette — matches bandolympics.live */
+  /* Core palette — matches bandxp.com */
   --color-background: #0a0a0a;
   --color-surface: #1a1a2e;
   --color-card: #1a1a2e;

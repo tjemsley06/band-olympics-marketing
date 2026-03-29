@@ -78,7 +78,7 @@ function buildPasswordPage(showError: boolean): string {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Band Olympics Live — Password Required</title>
+  <title>BandXP — Password Required</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -182,9 +182,9 @@ function buildPasswordPage(showError: boolean): string {
 </head>
 <body>
   <div class="container">
-    <img src="/band-olympics-logo.png" alt="Band Olympics" class="logo" />
+    <img src="/band-olympics-logo.png" alt="BandXP" class="logo" />
     <div class="brand">
-      <span>Band</span><span class="brand-purple">Olympics</span><span class="brand-pink">Live</span>
+      <span class="brand-purple">Band</span><span class="brand-pink">XP</span>
     </div>
     <p class="subtitle">This site is currently in preview. Enter the password to continue.</p>
     <div class="card">
