@@ -78,7 +78,7 @@ function buildPasswordPage(showError: boolean): string {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BandXP — Password Required</title>
+  <title>BandXP.Live — Password Required</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -116,6 +116,7 @@ function buildPasswordPage(showError: boolean): string {
     }
     .brand-white { color: #ffffff; }
     .brand-pink { color: #ff00ea; }
+    .brand-cyan { color: #00e5ff; }
     .subtitle {
       color: #a0a0b0;
       font-size: 0.875rem;
@@ -182,9 +183,9 @@ function buildPasswordPage(showError: boolean): string {
 </head>
 <body>
   <div class="container">
-    <img src="/bandxp-logo.png" alt="BandXP" class="logo" />
+    <img src="/bandxp-logo.png" alt="BandXP.Live" class="logo" />
     <div class="brand">
-      <span class="brand-white">Band</span><span class="brand-pink">XP</span>
+      <span class="brand-white">Band</span><span class="brand-pink">XP</span><span class="brand-white">.</span><span class="brand-cyan">Live</span>
     </div>
     <p class="subtitle">This site is currently in preview. Enter the password to continue.</p>
     <div class="card">

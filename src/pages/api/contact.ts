@@ -39,7 +39,7 @@ export const POST: APIRoute = async ({ request }) => {
   // Send notification to admin
   try {
     await resend.emails.send({
-      from: "BandXP <noreply@bandxp.com>",
+      from: "BandXP.Live <noreply@bandxp.com>",
       to: toEmail,
       subject: `New Contact Form: ${school}`,
       html: `
@@ -73,9 +73,9 @@ export const POST: APIRoute = async ({ request }) => {
   // Send confirmation to submitter
   try {
     await resend.emails.send({
-      from: "BandXP <noreply@bandxp.com>",
+      from: "BandXP.Live <noreply@bandxp.com>",
       to: email,
-      subject: "We received your message \u2014 BandXP",
+      subject: "We received your message \u2014 BandXP.Live",
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; background: #0a0a0a; border: 1px solid #27272a; border-radius: 12px; overflow: hidden;">
           <div style="background: linear-gradient(135deg, #7c3aed, #4c1d95); padding: 24px; text-align: center;">
@@ -85,10 +85,9 @@ export const POST: APIRoute = async ({ request }) => {
             <p style="color: #ffffff; font-size: 14px; line-height: 1.6;">Hi ${name},</p>
             <p style="color: #a0a0b0; font-size: 14px; line-height: 1.6;">We received your message about ${school}. A member of our team will get back to you shortly.</p>
             <p style="color: #a0a0b0; font-size: 14px; line-height: 1.6;">In the meantime, you can learn more at <a href="https://bandxp.com" style="color: #7c3aed;">bandxp.com</a>.</p>
-            <p style="color: #a0a0b0; font-size: 14px; line-height: 1.6; margin-top: 24px;">\u2014 The BandXP Team</p>
+            <p style="color: #a0a0b0; font-size: 14px; line-height: 1.6; margin-top: 24px;">\u2014 The BandXP.Live Team</p>
           </div>
           <div style="padding: 16px 24px; border-top: 1px solid #27272a; text-align: center;">
-              <!-- TODO: update tagline for BandXP -->
               <p style="color: #666; font-size: 12px; margin: 0; font-style: italic;">Own Your Practice. Earn Your Medal.</p>
           </div>
         </div>
