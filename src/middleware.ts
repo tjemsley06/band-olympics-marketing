@@ -1,7 +1,7 @@
 import { defineMiddleware } from "astro:middleware";
 
-const SITE_PASSWORD = "B@ndOlympics2026!";
-const COOKIE_NAME = "bo_site_access";
+const SITE_PASSWORD = "B@ndXP2026!";
+const COOKIE_NAME = "bxp_site_access";
 const COOKIE_VALUE = "authorized";
 
 export const onRequest = defineMiddleware(async ({ request, cookies, url }, next) => {
@@ -114,7 +114,7 @@ function buildPasswordPage(showError: boolean): string {
       letter-spacing: -0.02em;
       margin-bottom: 0.5rem;
     }
-    .brand-purple { color: #7c3aed; }
+    .brand-white { color: #ffffff; }
     .brand-pink { color: #ff00ea; }
     .subtitle {
       color: #a0a0b0;
@@ -184,7 +184,7 @@ function buildPasswordPage(showError: boolean): string {
   <div class="container">
     <img src="/bandxp-logo.png" alt="BandXP" class="logo" />
     <div class="brand">
-      <span class="brand-purple">Band</span><span class="brand-pink">XP</span>
+      <span class="brand-white">Band</span><span class="brand-pink">XP</span>
     </div>
     <p class="subtitle">This site is currently in preview. Enter the password to continue.</p>
     <div class="card">
