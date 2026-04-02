@@ -129,6 +129,7 @@ export default function BandXPSurvey() {
   const [answers, setAnswers] = useState({});
   const [currentSection, setCurrentSection] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [hoveredScale, setHoveredScale] = useState({});
 
   const sectionQuestions = questions.filter((q) => {
@@ -150,6 +151,21 @@ export default function BandXPSurvey() {
   const handleScale = (id, val) => setAnswers((a) => ({ ...a, [id]: val }));
   const handleText = (id, val) => setAnswers((a) => ({ ...a, [id]: val }));
   const handleContact = (key, val) => setAnswers((a) => ({ ...a, [key]: val }));
+
+  const handleSubmit = async () => {
+    setSubmitting(true);
+    try {
+      await fetch("/api/survey", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(answers),
+      });
+    } catch (err) {
+      console.error("Survey submit error:", err);
+    }
+    setSubmitted(true);
+    setSubmitting(false);
+  };
 
   const isComplete = sectionQuestions.every((q) => {
     if (q.type === "text" || q.type === "contact") return true;
@@ -483,15 +499,17 @@ export default function BandXPSurvey() {
             </button>
           ) : (
             <button
-              onClick={() => setSubmitted(true)}
+              onClick={handleSubmit}
+              disabled={submitting}
               style={{
                 padding: "0.75rem 2rem", borderRadius: 10,
-                border: "none", cursor: "pointer",
+                border: "none", cursor: submitting ? "wait" : "pointer",
                 background: "linear-gradient(135deg, #7c3aed, #FF00EA)",
                 color: "#fff", fontSize: "0.9rem", fontWeight: 600,
+                opacity: submitting ? 0.7 : 1,
               }}
             >
-              Submit Survey ✓
+              {submitting ? "Submitting..." : "Submit Survey ✓"}
             </button>
           )}
         </div>

@@ -20,8 +20,8 @@ export const onRequest = defineMiddleware(async ({ request, cookies, url }, next
     return next();
   }
 
-  // Always allow the contact form API
-  if (url.pathname === "/api/contact") {
+  // Always allow the contact form and survey APIs
+  if (url.pathname === "/api/contact" || url.pathname === "/api/survey") {
     return next();
   }
 
