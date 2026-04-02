@@ -332,6 +332,7 @@ export default function BandXPSurvey() {
                         color: selected ? "#c4b5fd" : "#a0a0b0",
                         fontSize: "0.9rem", transition: "all 0.15s",
                         display: "flex", alignItems: "center", gap: "0.75rem",
+                        outline: "none", WebkitTapHighlightColor: "transparent",
                       }}>
                         <span style={{
                           width: 16, height: 16, borderRadius: "50%",
@@ -359,6 +360,7 @@ export default function BandXPSurvey() {
                         color: selected ? "#f9a8d4" : "#a0a0b0",
                         fontSize: "0.9rem", transition: "all 0.15s",
                         display: "flex", alignItems: "center", gap: "0.75rem",
+                        outline: "none", WebkitTapHighlightColor: "transparent",
                       }}>
                         <span style={{
                           width: 16, height: 16, borderRadius: 4, flexShrink: 0,
@@ -404,6 +406,7 @@ export default function BandXPSurvey() {
                             transition: "all 0.15s",
                             display: "flex", flexDirection: "column",
                             alignItems: "center", gap: "0.3rem",
+                            outline: "none", WebkitTapHighlightColor: "transparent",
                           }}>
                           <span style={{ fontSize: "1rem", fontWeight: 700 }}>{val}</span>
                           <span style={{ fontSize: "0.65rem", lineHeight: 1.2, textAlign: "center" }}>{label}</span>
@@ -468,7 +471,7 @@ export default function BandXPSurvey() {
           alignItems: "center", marginTop: "2.5rem",
         }}>
           <button
-            onClick={() => setCurrentSection((s) => Math.max(0, s - 1))}
+            onClick={() => { setCurrentSection((s) => Math.max(0, s - 1)); window.scrollTo(0, 0); }}
             style={{
               padding: "0.75rem 1.5rem", borderRadius: 10,
               border: "1px solid #ffffff11", background: "transparent",
@@ -483,7 +486,7 @@ export default function BandXPSurvey() {
 
           {currentSection < sections.length - 1 ? (
             <button
-              onClick={() => { if (isComplete) setCurrentSection((s) => s + 1); }}
+              onClick={() => { if (isComplete) { setCurrentSection((s) => s + 1); window.scrollTo(0, 0); } }}
               style={{
                 padding: "0.75rem 2rem", borderRadius: 10,
                 border: "none", cursor: isComplete ? "pointer" : "not-allowed",
