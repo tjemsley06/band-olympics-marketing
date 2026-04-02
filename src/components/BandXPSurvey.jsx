@@ -13,7 +13,7 @@ const questions = [
     type: "single",
     section: "About You",
     question: "How many students are currently in your program?",
-    options: ["Fewer than 50", "50–100", "101–200", "201–350", "350+"],
+    options: ["Fewer than 50", "50–100", "101–200", "201–300", "301+"],
   },
   {
     id: "current_tracking",
@@ -33,7 +33,7 @@ const questions = [
       "Hard to track individual growth over time",
       "Private lesson teachers can't easily update progress",
       "Generating reports takes too long",
-      "Marching pass-offs are difficult to manage",
+      "Marching pass-offs are difficult to organize",
     ],
   },
   {
@@ -88,10 +88,10 @@ const questions = [
   },
   {
     id: "budget_source",
-    type: "single",
+    type: "multi",
     section: "Pricing",
-    question: "Where would the budget most likely come from?",
-    options: ["Personal / out of pocket", "School / department budget", "Booster organization", "Grant funding", "Not sure yet"],
+    question: "Where would the budget most likely come from? (Select all that apply)",
+    options: ["Personal / out of pocket", "School / department budget", "Booster organization", "Student activity fee", "Grant funding", "Not sure yet"],
   },
   {
     id: "pilot_interest",
@@ -99,6 +99,19 @@ const questions = [
     section: "Wrap Up",
     question: "Would you be interested in piloting BandXP with your program?",
     options: ["Yes — sign me up!", "Maybe — I'd want to see a demo first", "Probably not right now", "No"],
+  },
+  {
+    id: "contact_info",
+    type: "contact",
+    section: "Wrap Up",
+    question: "Great! Tell us a bit about your school so we can follow up.",
+    showWhen: (answers) => answers.pilot_interest === "Yes — sign me up!" || answers.pilot_interest === "Maybe — I'd want to see a demo first",
+    fields: [
+      { key: "contact_name", label: "Your Name", placeholder: "e.g. Mr. Johnson" },
+      { key: "contact_email", label: "Email Address", placeholder: "you@school.edu", inputType: "email" },
+      { key: "contact_school", label: "School Name", placeholder: "e.g. Westlake High School" },
+      { key: "contact_district", label: "School District", placeholder: "e.g. Eanes ISD" },
+    ],
   },
   {
     id: "open_feedback",
@@ -118,7 +131,11 @@ export default function BandXPSurvey() {
   const [submitted, setSubmitted] = useState(false);
   const [hoveredScale, setHoveredScale] = useState({});
 
-  const sectionQuestions = questions.filter((q) => q.section === sections[currentSection]);
+  const sectionQuestions = questions.filter((q) => {
+    if (q.section !== sections[currentSection]) return false;
+    if (q.showWhen && !q.showWhen(answers)) return false;
+    return true;
+  });
 
   const handleSingle = (id, val) => setAnswers((a) => ({ ...a, [id]: val }));
   const handleMulti = (id, val) => {
@@ -132,9 +149,10 @@ export default function BandXPSurvey() {
   };
   const handleScale = (id, val) => setAnswers((a) => ({ ...a, [id]: val }));
   const handleText = (id, val) => setAnswers((a) => ({ ...a, [id]: val }));
+  const handleContact = (key, val) => setAnswers((a) => ({ ...a, [key]: val }));
 
   const isComplete = sectionQuestions.every((q) => {
-    if (q.type === "text") return true;
+    if (q.type === "text" || q.type === "contact") return true;
     return answers[q.id] !== undefined && answers[q.id] !== "";
   });
 
@@ -197,7 +215,7 @@ export default function BandXPSurvey() {
         <div style={{ maxWidth: 680, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
             <img src="/bandxp-logo.png" alt="BandXP.Live" style={{ height: 36 }} />
-            <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1.1rem" }}>
+            <span style={{ fontFamily: "'Inter', sans-serif", fontWeight: 900, fontSize: "1.1rem", letterSpacing: "-0.025em" }}>
               <span style={{ color: "#fff" }}>Band</span>
               <span style={{ color: "#FF00EA" }}>XP</span>
               <span style={{ color: "#fff" }}>.</span>
@@ -397,6 +415,32 @@ export default function BandXPSurvey() {
                     lineHeight: 1.6,
                   }}
                 />
+              )}
+
+              {/* Contact info */}
+              {q.type === "contact" && (
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+                  {q.fields.map((field) => (
+                    <div key={field.key}>
+                      <label style={{ display: "block", fontSize: "0.8rem", color: "#888", marginBottom: "0.35rem" }}>
+                        {field.label}
+                      </label>
+                      <input
+                        type={field.inputType || "text"}
+                        value={answers[field.key] || ""}
+                        onChange={(e) => handleContact(field.key, e.target.value)}
+                        placeholder={field.placeholder}
+                        style={{
+                          width: "100%", boxSizing: "border-box",
+                          background: "#0A0A0A", border: "1px solid #ffffff11",
+                          borderRadius: 10, padding: "0.75rem 1rem",
+                          color: "#e8e8f0", fontSize: "0.9rem",
+                          outline: "none", fontFamily: "'DM Sans', sans-serif",
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
               )}
             </div>
           ))}
