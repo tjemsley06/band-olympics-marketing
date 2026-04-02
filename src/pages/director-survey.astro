@@ -1,0 +1,10 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BandXPSurvey from "../components/BandXPSurvey.jsx";
+
+export const prerender = false;
+---
+
+<BaseLayout title="BandXP Director Survey">
+  <BandXPSurvey client:load />
+</BaseLayout>

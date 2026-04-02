@@ -10,6 +10,11 @@ export const onRequest = defineMiddleware(async ({ request, cookies, url }, next
     return next();
   }
 
+  // Always allow the director survey page (public)
+  if (url.pathname === "/director-survey" || url.pathname === "/director-survey/") {
+    return next();
+  }
+
   // Always allow the password verification endpoint
   if (url.pathname === "/api/verify-password") {
     return next();
