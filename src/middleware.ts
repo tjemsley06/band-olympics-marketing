@@ -188,7 +188,7 @@ function buildPasswordPage(showError: boolean): string {
 </head>
 <body>
   <div class="container">
-    <img src="/bandxp-logo-filled.svg" alt="BandXP.Live" class="logo" />
+    <img src="/bandxp-logo-filled.png" alt="BandXP.Live" class="logo" />
     <div class="brand">
       <span class="brand-white">Band</span><span class="brand-pink">XP</span><span class="brand-white">.</span><span class="brand-cyan">Live</span>
     </div>
