@@ -230,7 +230,7 @@ export default function BandXPSurvey() {
       }}>
         <div style={{ maxWidth: 680, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-            <img src="/bandxp-logo.png" alt="BandXP.Live" style={{ height: 36 }} />
+            <img src="/bandxp-logo-filled.svg" alt="BandXP.Live" style={{ height: 36 }} />
             <span style={{ fontFamily: "'Inter', sans-serif", fontWeight: 900, fontSize: "1.1rem", letterSpacing: "-0.025em" }}>
               <span style={{ color: "#fff" }}>Band</span>
               <span style={{ color: "#FF00EA" }}>XP</span>
